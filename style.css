@@ -1,0 +1,577 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #b54769;
+    height: 100%
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('bgr3.avif'); /* Replace 'background.jpg' with the path to your image */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed during scroll */
+    background-position: center; /* Centers the image */
+    color: #fff; /* Adjust text color for contrast */
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: -1; /* Ensures it stays behind content */
+}
+.photo-slider {
+    width: 100%;
+    max-width: 1200px; /* Adjust for container size */
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 400px; /* Adjust height */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images are cropped elegantly */
+    border-radius: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ff004f; /* Navigation arrow color */
+    font-size: 20px;
+}
+
+.swiper-pagination-bullet {
+    background: #ababab; /* Pagination dot color */
+}
+
+.swiper-pagination-bullet-active {
+    background: #ff004f; /* Active dot color */
+}
+
+      
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Section */
+#header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Navbar */
+nav .fas {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    nav .fas {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fas {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+}
+
+/* Header Text */
+.header-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span {
+    color: powderblue;
+}
+
+@media only screen and (max-width: 600px) {
+    #header .header-text {
+        margin-top: 100px;
+        font-size: 20px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+}
+
+/* About Section */
+#about {
+    padding: 80px 0;
+    color: #f4f4f4;
+}
+
+.about img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+#about {
+    background: #080808; /* Matches the website's dark theme */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#about .sub-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #b54769;
+    margin-bottom: 20px;
+}
+
+#about {
+    background: #080808; /* Matches the website's dark theme */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#about .sub-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: purple;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ababab;
+    margin: 10px auto;
+    max-width: 800px; /* Centralized text with a max width */
+}
+
+#about .highlighted {
+    font-size: 22px;
+    font-weight: 700;
+    color: yellowgreen;
+    margin-top: 20px;
+}
+
+#about ul.focus-areas {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#about ul.focus-areas li {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    background: palevioletred;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(255, 0, 79, 0.5);
+}
+
+#about .founder a {
+    font-size: 18px;
+    color: rgba(255, 0, 79, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+#about .founder a:hover {
+    color: #b54769;
+}
+
+
+.sub-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles {
+    display: flex;
+    margin: 20px 0;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    color: #ababab;
+}
+
+.tab-links.active-link {
+    color: #ff004f;
+}
+
+.tab-contents {
+    display: none;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+
+/* Team Section */
+#team .team-list img {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* Our Team Section */
+#team {
+    background: #000;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#team .sub-title {
+    font-size: 36px;
+    color: #ff004f;
+    margin-bottom: 20px;
+}
+
+.team-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 250px; /* Set height for the carousel */
+}
+
+.team-slider {
+    display: flex;
+    width: calc(100% * 10); /* 10 images in the slider */
+    animation: scroll-infinite 15s linear infinite; /* Smooth infinite scrolling */
+}
+
+.team-slider img {
+    width: 200px; /* Adjust image size */
+    height: 200px;
+    margin: 0 10px;
+    object-fit: cover;
+    border-radius: 50%; /* Make them circular */
+    border: 2px solid #ff004f;
+}
+
+/* Infinite Scrolling Animation */
+@keyframes scroll-infinite {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Volunteer Section */
+#volunteer .volunteer-list img {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.volunteer-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Contact Section */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    background: #262626;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px 30px;
+    background: #ff004f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.contact-form button:hover {
+    background: #b54769;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #b54769;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.google-forms ul {
+    list-style: none; /* Remove bullets from the list */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.google-forms ul li {
+    margin: 10px 0; /* Add spacing between items */
+}
+
+.google-forms ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #ffcc00; /* Set the link color to a bright yellow for visibility */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.google-forms ul li a:hover {
+    color: #ffffff; /* Change color to white on hover */
+    text-shadow: 0px 0px 10px #ffcc00; /* Add a glowing effect */
+}
+/* Donate Section */
+#donate p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+#donate h2 {
+    margin-top: 20px;
+    color: #fff;
+}
+#donate {
+    background: linear-gradient(135deg, #000000, #2b2b2b); /* Subtle gradient for a polished look */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px; /* Rounded corners for a sleek appearance */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+#donate .sub-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffcc00; /* Bright yellow for emphasis */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Subtle shadow for text */
+}
+
+#donate .donation-intro {
+    font-size: 18px;
+    color: #d9d9d9; /* Light gray for readability */
+    margin-bottom: 30px;
+    line-height: 1.6; /* Increase line spacing */
+}
+
+#donate h2 {
+    font-size: 28px;
+    color: #ffffff; /* White for contrast */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+#donate p {
+    font-size: 18px;
+    color: #c1c1c1; /* Soft gray for subtlety */
+    margin: 10px 0;
+}
+
+#donate p strong {
+    color: #ffcc00; /* Highlighted text for important information */
+}
+
+#donate p:hover {
+    color: #ffffff; /* Add interactivity */
+    text-shadow: 0px 0px 10px #ffcc00; /* Glow effect on hover */
+}
+
+#donate .container {
+    max-width: 600px; /* Limit width for better readability */
+    margin: auto;
+}
+
+#donate:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    transition: all 0.3s ease-in-out; /* Smooth animation */
+}
+
+/* Responsive Image Handling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .team-list img, .volunteer-list img {
+        max-width: 150px;
+    }
+}
+#map-section {
+    background: #000;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#map-section .sub-title {
+    font-size: 36px;
+    color: #ff004f;
+    margin-bottom: 20px;
+}
+
+#map-section .map-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    border: 5px solid #ff004f;
+    border-radius: 10px;
+    overflow: hidden;
+}
+    #mentorship {
+        background: #f4f4f4;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    #mentorship .sub-title {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    #mentorship p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 30px;
+    }
+
+    .mentor-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #ff004f;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .mentor-button:hover {
+        background-color: #e60046;
+    }
+
